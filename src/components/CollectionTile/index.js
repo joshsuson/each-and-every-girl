@@ -6,8 +6,14 @@ import {
   Description,
 } from './styles';
 import BackgroundImage from 'gatsby-background-image';
+import { StyledLink } from '../StyledLink';
 
-export const CollectionTile = ({ title, description, backgroundImage }) => {
+export const CollectionTile = ({
+  title,
+  description,
+  backgroundImage,
+  destination,
+}) => {
   return (
     <CollectionTileWrapper>
       <BackgroundImage fluid={backgroundImage} />
@@ -15,6 +21,7 @@ export const CollectionTile = ({ title, description, backgroundImage }) => {
         <div>
           <Title>{title}</Title>
           <Description>{description}</Description>
+          <StyledLink to={destination}>Shop Now</StyledLink>
         </div>
       </CollectionTileContent>
     </CollectionTileWrapper>

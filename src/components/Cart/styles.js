@@ -4,7 +4,7 @@ import { StyledLink } from '../StyledLink';
 export const CartWrapper = styled(StyledLink).attrs(() => ({
   to: '/cart',
 }))`
-  margin-left: auto;
+  padding-left: 16px;
   display: flex;
   align-items: center;
   color: black;

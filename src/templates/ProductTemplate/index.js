@@ -5,6 +5,7 @@ import {
   ImageGallery,
   ProductQuantityAdder,
   Button,
+  SEO,
 } from '../../components';
 import { graphql } from 'gatsby';
 import { Grid, SelectWrapper, Price } from './styles';
@@ -57,6 +58,10 @@ export default function ProductTemplate(props) {
 
   return (
     <Layout>
+      <SEO
+        title={props.data.shopifyProduct.title}
+        description={props.data.shopifyProduct.description}
+      />
       <Button onClick={() => navigate(-1)}>Back to products</Button>
       <Grid>
         <div>

@@ -6,6 +6,7 @@ const IndexPage = () => {
   const { collections } = useContext(ProductContext);
   return (
     <Layout>
+      <SEO title="Home" description="Each and Every Girl Homepage" />
       <HomePageCollectionsGrid collections={collections} />
     </Layout>
   );

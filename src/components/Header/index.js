@@ -1,11 +1,14 @@
 import React from 'react';
 import { HeaderContainer } from './styles';
 import { Cart } from '../Cart';
+import { Search } from '../Search';
+import { Link } from 'gatsby';
 
 export const Header = () => {
   return (
     <HeaderContainer>
-      <h1>Each and Every Girl</h1>
+      <Link to="/">Each and Every Girl</Link>
+      <Search />
       <Cart />
     </HeaderContainer>
   );

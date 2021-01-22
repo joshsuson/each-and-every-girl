@@ -13,3 +13,6 @@ export * from './HomepageCollectionsGrid';
 export * from './CollectionTile';
 export * from './Filters';
 export * from './Checkbox';
+export * from './ProductsGrid';
+export * from './ProductTile';
+export * from './Search';

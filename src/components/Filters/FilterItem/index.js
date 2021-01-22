@@ -9,6 +9,7 @@ export const FilterItem = ({ title, id }) => {
   const qs = queryString.parse(search);
   const collectionIds = qs.c?.split(',').filter(c => !!c) || [];
   const checked = collectionIds?.find(cId => cId === id);
+  const searchTerm = qs.s;
 
   const handleClick = () => {
     let navigateTo = '/all-products';
@@ -24,8 +25,14 @@ export const FilterItem = ({ title, id }) => {
       newIds = collectionIds.map(cId => encodeURIComponent(cId));
     }
 
-    if (newIds.length) {
+    if (newIds.length && !searchTerm) {
       navigate(`${navigateTo}?c=${newIds.join(',')}`);
+    } else if (newIds.length && searchTerm) {
+      navigate(
+        `${navigateTo}?c${newIds.join(',')}&s=${encodeURIComponent(searchTerm)}`
+      );
+    } else if (!newIds.length && searchTerm) {
+      navigate(`${navigateTo}?s=${encodeURIComponent(searchTerm)}`);
     } else {
       navigate(`${navigateTo}`);
     }
