@@ -6,47 +6,54 @@ import queryString from 'query-string';
 import { useLocation } from '@reach/router';
 
 const Content = styled.div`
-  display: grid;
+  /* display: grid; */
   gap: 20px;
+  margin: 20px auto;
   margin-top: 20px;
-  grid-template-columns: 1fr 3fr;
+  max-width: 1200px;
+
+  @media (max-width: 834px) {
+    margin: 20px 20px;
+  }
+
+  /* grid-template-columns: 1fr 3fr; */
 `;
 
 export default function AllProducts() {
-  const { products, collections } = useContext(ProductContext);
-  const collectionProductMap = {};
+  const { products } = useContext(ProductContext);
+  // const collectionProductMap = {};
   const { search } = useLocation();
   const qs = queryString.parse(search);
-  const selectedCollectionIds = qs.c?.split(',').filter(c => !!c) || [];
-  const selectedCollectionIdsMap = {};
+  // const selectedCollectionIds = qs.c?.split(',').filter(c => !!c) || [];
+  // const selectedCollectionIdsMap = {};
   const searchTerm = qs.s;
 
-  selectedCollectionIds.forEach(collectionId => {
-    selectedCollectionIdsMap[collectionId] = true;
-  });
+  // selectedCollectionIds.forEach(collectionId => {
+  //   selectedCollectionIdsMap[collectionId] = true;
+  // });
 
-  if (collections) {
-    collections.forEach(collection => {
-      collectionProductMap[collection.shopifyId] = {};
+  // if (collections) {
+  //   collections.forEach(collection => {
+  //     collectionProductMap[collection.shopifyId] = {};
 
-      collection.products.forEach(product => {
-        collectionProductMap[collection.shopifyId][product.shopifyId] = true;
-      });
-    });
-  }
+  //     collection.products.forEach(product => {
+  //       collectionProductMap[collection.shopifyId][product.shopifyId] = true;
+  //     });
+  //   });
+  // }
 
-  const filterByCategory = product => {
-    if (Object.keys(selectedCollectionIdsMap).length) {
-      for (let key in selectedCollectionIdsMap) {
-        if (collectionProductMap[key]?.[product.shopifyId]) {
-          return true;
-        }
-      }
-      return false;
-    }
+  // const filterByCategory = product => {
+  //   if (Object.keys(selectedCollectionIdsMap).length) {
+  //     for (let key in selectedCollectionIdsMap) {
+  //       if (collectionProductMap[key]?.[product.shopifyId]) {
+  //         return true;
+  //       }
+  //     }
+  //     return false;
+  //   }
 
-    return true;
-  };
+  //   return true;
+  // };
 
   const filterBySearchTerm = product => {
     if (searchTerm) {
@@ -56,7 +63,7 @@ export default function AllProducts() {
   };
 
   const filteredProducts = products
-    .filter(filterByCategory)
+    // .filter(filterByCategory)
     .filter(filterBySearchTerm);
 
   return (
@@ -70,9 +77,12 @@ export default function AllProducts() {
           Search Term: <strong>'{searchTerm}'</strong>
         </h3>
       )}
-      {!!filteredProducts.length && <h4>{filteredProducts.length} Products</h4>}
+
       <Content>
-        <Filters />
+        {!!filteredProducts.length && (
+          <h4>{filteredProducts.length} Products</h4>
+        )}
+        {/* <Filters /> */}
         {!filteredProducts.length && (
           <div>
             <h3>

@@ -7,11 +7,12 @@ export const RemoveLineItem = ({ lineItemId }) => {
   const { removeLineItem } = useContext(CartContext);
 
   const handleClick = () => {
+    console.log('worked');
     removeLineItem(lineItemId);
   };
 
   return (
-    <Icon oncClick={handleClick}>
+    <Icon onClick={handleClick}>
       <FaTrashAlt />
     </Icon>
   );

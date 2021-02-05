@@ -2,18 +2,15 @@ import styled from 'styled-components';
 
 export const ProductsGridWrapper = styled.section`
   display: grid;
-  gap: 5px;
+  gap: 24px;
   grid-template-columns: 1fr;
+  padding: 24px;
 
-  @media (min-width: 385px) {
+  @media (min-width: 600px) {
     grid-template-columns: 1fr 1fr;
   }
 
-  @media (min-width: 768px) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
   @media (min-width: 1024px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 `;

@@ -18,4 +18,9 @@ export const CartWrapper = styled(StyledLink).attrs(() => ({
   &:hover {
     text-decoration: underline;
   }
+
+  @media (max-width: 834px) {
+    grid-column: 1 / span 2;
+    justify-self: center;
+  }
 `;

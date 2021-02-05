@@ -1,7 +1,14 @@
 import React, { useContext } from 'react';
 import { QuantityAdjuster } from '../QuantityAdjuster';
 import CartContext from '../../context/CartContext';
-import { CartItem, CartHeader, CartFooter, Footer } from './styles';
+import {
+  CartItem,
+  CartHeader,
+  CartFooter,
+  Footer,
+  CartWrapper,
+  StyledButton,
+} from './styles';
 import { RemoveLineItem } from '../RemoveLineItem';
 import { Button } from '../Button';
 import { navigate } from '@reach/router';
@@ -14,8 +21,10 @@ export const CartContent = () => {
   };
 
   return (
-    <div>
-      <h1>Your Cart</h1>
+    <CartWrapper>
+      <h1>
+        <span>Your Cart</span>
+      </h1>
       {!!checkout?.lineItems && (
         <CartHeader>
           <div>Product</div>
@@ -61,20 +70,22 @@ export const CartContent = () => {
       )}
       <Footer>
         <div>
-          <Button onClick={() => navigate(-1)}>Continue Shopping</Button>
+          <StyledButton onClick={() => navigate(-1)}>
+            Continue Shopping
+          </StyledButton>
         </div>
         <div>
           {!!checkout?.webUrl && (
-            <Button
+            <StyledButton
               onClick={() => {
                 window.location.href = checkout.webUrl;
               }}
             >
               Checkout
-            </Button>
+            </StyledButton>
           )}
         </div>
       </Footer>
-    </div>
+    </CartWrapper>
   );
 };

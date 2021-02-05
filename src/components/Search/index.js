@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Input } from '../Input';
 import { Button } from '../Button';
 import { FaSearch } from 'react-icons/fa';
-import { SearchForm } from './styles';
+import { SearchForm, SearchButton } from './styles';
 import { navigate, useLocation } from '@reach/router';
 import queryString from 'query-string';
 
@@ -32,9 +32,9 @@ export const Search = () => {
         onChange={e => setSearchTerm(e.currentTarget.value)}
         placeholder="Search"
       />
-      <Button>
+      <SearchButton>
         <FaSearch />
-      </Button>
+      </SearchButton>
     </SearchForm>
   );
 };

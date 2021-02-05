@@ -1,13 +1,17 @@
 import React from 'react';
-import { HeaderContainer } from './styles';
+import { HeaderContainer, Logo, LogoImg } from './styles';
 import { Cart } from '../Cart';
 import { Search } from '../Search';
-import { Link } from 'gatsby';
+import { Nav } from '../Nav';
+import logo from '../../assets/images/EEG-Logo.png';
 
 export const Header = () => {
   return (
     <HeaderContainer>
-      <Link to="/">Each and Every Girl</Link>
+      <Logo to="/">
+        <LogoImg src={logo} alt="Each and Every Girl" />
+      </Logo>
+      <Nav />
       <Search />
       <Cart />
     </HeaderContainer>

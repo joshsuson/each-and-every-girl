@@ -26,11 +26,11 @@ export const Button = styled.button`
   white-space: nowrap;
   ${fullWidthStyles}
 
-  &:hover:not(:disabled) {
+  /* &:hover:not(:disabled) {
     color: white;
     background: black;
     border: 1px solid rgba(0, 0, 0, 0);
-  }
+  } */
 
   &:disabled {
     border-color: #999;

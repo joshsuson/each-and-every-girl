@@ -4,6 +4,6 @@ export const Icon = styled.div`
   cursor: pointer;
 
   &:hover {
-    color: red;
+    color: hsla(18, 99%, 70%, 1);
   }
 `;

@@ -19,27 +19,6 @@ const query = graphql`
         }
       }
     }
-    allShopifyCollection(sort: { fields: title, order: ASC }) {
-      edges {
-        node {
-          products {
-            ...ShopifyProductFields
-          }
-          title
-          description
-          shopifyId
-          image {
-            localFile {
-              childImageSharp {
-                fluid(maxWidth: 1000) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
-          }
-        }
-      }
-    }
   }
 `;
 
@@ -51,13 +30,12 @@ const ProductContext = React.createContext(defaultState);
 export default ProductContext;
 
 export function ProductContextProvider({ children }) {
-  const { allShopifyCollection, allShopifyProduct } = useStaticQuery(query);
+  const { allShopifyProduct } = useStaticQuery(query);
 
   return (
     <ProductContext.Provider
       value={{
         products: allShopifyProduct.edges.map(({ node }) => node),
-        collections: allShopifyCollection.edges.map(({ node }) => node),
       }}
     >
       {children}

@@ -4,14 +4,21 @@ import {
   Layout,
   ImageGallery,
   ProductQuantityAdder,
-  Button,
   SEO,
 } from '../../components';
 import { graphql } from 'gatsby';
-import { Grid, SelectWrapper, Price } from './styles';
+import {
+  Grid,
+  SelectWrapper,
+  Price,
+  Wrapper,
+  StyledButton,
+  Title,
+} from './styles';
 import CartContext from '../../context/CartContext';
 import { navigate, useLocation } from '@reach/router';
 import queryString from 'query-string';
+import { BsFillCaretLeftFill } from 'react-icons/bs';
 
 export const query = graphql`
   query ProductQuery($shopifyId: String) {
@@ -58,52 +65,59 @@ export default function ProductTemplate(props) {
 
   return (
     <Layout>
-      <SEO
-        title={props.data.shopifyProduct.title}
-        description={props.data.shopifyProduct.description}
-      />
-      <Button onClick={() => navigate(-1)}>Back to products</Button>
-      <Grid>
-        <div>
-          <ImageGallery
-            selectedVariantImageId={selectedVariant?.image.id}
-            images={props.data.shopifyProduct.images}
-          />
-        </div>
-        <div>
-          <h1>{props.data.shopifyProduct.title}</h1>
-          <p>{props.data.shopifyProduct.description}</p>
-          {product?.availableForSale && !!selectedVariant && (
-            <>
-              {product?.variants.length > 1 && (
-                <SelectWrapper>
-                  <strong>Variant</strong>
-                  <select
-                    value={selectedVariant.id}
-                    name="variant"
-                    onChange={handleVariantChange}
-                  >
-                    {product?.variants.map(variant => (
-                      <option value={variant.id} key={variant.id}>
-                        {variant.title}
-                      </option>
-                    ))}
-                  </select>
-                  {!!selectedVariant && (
-                    <>
-                      <Price>${selectedVariant.price}</Price>
-                      <ProductQuantityAdder
-                        variantId={selectedVariant.id}
-                        available={selectedVariant.available}
-                      />
-                    </>
-                  )}
-                </SelectWrapper>
-              )}
-            </>
-          )}
-        </div>
-      </Grid>
+      <Wrapper>
+        <SEO
+          title={props.data.shopifyProduct.title}
+          description={props.data.shopifyProduct.description}
+        />
+        <StyledButton onClick={() => navigate(-1)}>
+          <BsFillCaretLeftFill size="1.5rem" />
+          Back to products
+        </StyledButton>
+        <Grid>
+          <div>
+            <ImageGallery
+              selectedVariantImageId={selectedVariant?.image.id}
+              images={props.data.shopifyProduct.images}
+            />
+          </div>
+          <div>
+            <Title>
+              <span>{props.data.shopifyProduct.title}</span>
+            </Title>
+            <p>{props.data.shopifyProduct.description}</p>
+            {product?.availableForSale && !!selectedVariant && (
+              <>
+                {product?.variants.length > 1 && (
+                  <SelectWrapper>
+                    <strong>Variant</strong>
+                    <select
+                      value={selectedVariant.id}
+                      name="variant"
+                      onChange={handleVariantChange}
+                    >
+                      {product?.variants.map(variant => (
+                        <option value={variant.id} key={variant.id}>
+                          {variant.title}
+                        </option>
+                      ))}
+                    </select>
+                  </SelectWrapper>
+                )}
+                {!!selectedVariant && (
+                  <>
+                    <Price>${selectedVariant.price}</Price>
+                    <ProductQuantityAdder
+                      variantId={selectedVariant.id}
+                      available={selectedVariant.available}
+                    />
+                  </>
+                )}
+              </>
+            )}
+          </div>
+        </Grid>
+      </Wrapper>
     </Layout>
   );
 }
