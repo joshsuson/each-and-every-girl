@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout } from '../components';
+import { Layout, SEO } from '../components';
 import styled from 'styled-components';
 
 const Policies = styled.div`
@@ -13,6 +13,10 @@ const Policies = styled.div`
 export default function PoliciesPage() {
   return (
     <Layout>
+      <SEO
+        title="Policies Page"
+        description="Privacy Policies for Each and Every Girl"
+      />
       <Policies>
         <h2 id="Privacy Policy">Privacy Policy</h2>
         <p>  </p>
