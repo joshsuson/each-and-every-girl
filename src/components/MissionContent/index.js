@@ -12,7 +12,7 @@ export const MissionContent = () => {
         today. We are constantly inundated and overwhelmed by advertisement, tv
         shows, and unrealistic expectations. When you go into a retail store the
         size you need is never available, but the size smaller is. I know, for
-        me, the process of seeing myself as beautiful as been a long one. One,
+        me, the process of seeing myself as beautiful has been a long one. One,
         that honestly, without the grace of God I would’ve never even started
         down.
       </Content>
@@ -40,9 +40,9 @@ export const MissionContent = () => {
       <Content>
         I definitely wouldn’t pretend to have arrived at the end of this
         journey. Like most women I often struggle with the way I look or feel.
-        But because of what the Lord has done for me, I knew when I starting
+        But because of what the Lord has done for me, I knew when I started
         making it had to be for a reason. I wanted to make simple, elegant
-        pieces that were filled with the love. I wanted to help create a culture
+        pieces that were filled with love. I wanted to help create a culture
         that consistently reminded the women around me just how beautiful they
         are. I wanted to take steps forward in raising my daughters to believe
         they are beautiful, because God has called them beautiful.
@@ -50,17 +50,17 @@ export const MissionContent = () => {
       <Heading>The Practicals</Heading>
       <Divider />
       <Content>
-        Making for mission is more than just the heart and spirit . I wanted to
-        be actual actions attached to that. So when I started making I set out
-        to connect with local non profit organizations who rescue and restore
-        women so that I could be apart of helping these women realize they are
-        beautiful.
+        Making for mission is more than just the heart and spirit. I wanted
+        there to be actual actions attached to that. So when I started making I
+        set out to connect with local non profit organizations who rescue and
+        restore women so that I could be a part of helping these women realize
+        they are beautiful.
       </Content>
       <br />
       <Content>
-        The other thing I am actively trying to do is connecting to women with
-        incredible stories of love and power. Then make a piece that in some
-        small way reflects and expresses that story.
+        The other thing I am doing, is actively trying to connect with women who
+        have incredible stories of love and power. Then make a piece that in
+        some small way reflects and expresses that story.
       </Content>
       <br />
       <Content>
