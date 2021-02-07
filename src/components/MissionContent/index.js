@@ -10,11 +10,9 @@ export const MissionContent = () => {
       <Content>
         It can be really hard to be a woman and feel beautiful in this world
         today. We are constantly inundated and overwhelmed by advertisement, tv
-        shows, and unrealistic expectations. When you go into a retail store the
-        size you need is never available, but the size smaller is. I know, for
-        me, the process of seeing myself as beautiful has been a long one. One,
-        that honestly, without the grace of God I would’ve never even started
-        down.
+        shows, and unrealistic expectations. I know, for me, the process of
+        seeing myself as beautiful has been a long one. One, that honestly,
+        without the grace of God I would’ve never even started down.
       </Content>
       <Quote>
         <span>
@@ -28,7 +26,8 @@ export const MissionContent = () => {
         live up to. Through the slow and gentle pursuit of God I began to
         realize that I had to redefine beauty. I had to accept that God cares
         about me and He wants me to know that I’m beautiful. {`(`}That’s true
-        for you too. He cares about you and wants you to know you’re beautiful
+        for you too. He created you and called you beautiful. He wants you to
+        know that you are beautiful
         {`)`}.
       </Content>
       <Quote>
